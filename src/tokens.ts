@@ -1,30 +1,30 @@
 export const t = {
-  bg: '#F0EEF8',
-  surface: '#F8F7FF',
-  surfaceRaised: '#F8F7FF',
+  bg: '#ffffff',
+  surface: '#F2F2F2',
+  surfaceRaised: '#F2F2F2',
 
-  text: '#1A1035',
-  textSecondary: '#6B7280',
-  textTertiary: '#AEAEB2',
+  text: '#0D0D0D',
+  textSecondary: '#A66AA2',
+  textTertiary: '#B5AABF',
 
-  accent: '#7C6AF7',
-  accentMid: '#A78BFA',
-  accentLight: '#EDE9FE',
-  accentGradient: 'linear-gradient(135deg, #7C6AF7 0%, #C084FC 100%)',
+  accent: '#F26671',
+  accentMid: '#A66AA2',
+  accentLight: '#FDE8EA',
+  accentGradient: 'linear-gradient(135deg, #F26671 0%, #A66AA2 100%)',
 
-  cardDark: '#5B21B6',
+  cardDark: '#A66AA2',
 
-  border: 'rgba(124,106,247,0.12)',
-  shadow: '0 2px 16px rgba(124,106,247,0.08)',
-  shadowMd: '0 4px 24px rgba(124,106,247,0.16)',
+  border: 'rgba(0,0,0,0.07)',
+  shadow: '0 2px 16px rgba(0,0,0,0.06)',
+  shadowMd: '0 4px 24px rgba(0,0,0,0.10)',
 
   // status
-  aheadBg: '#EDE9FE',
-  aheadText: '#5B21B6',
+  aheadBg: '#FDE8EA',
+  aheadText: '#F26671',
   behindBg: '#FFE4E4',
   behindText: '#C02020',
-  onTrackBg: '#F0EEF8',
-  onTrackText: '#7C6AF7',
+  onTrackBg: '#F2F2F2',
+  onTrackText: '#B5AABF',
 
   radius: {
     card: 24,
