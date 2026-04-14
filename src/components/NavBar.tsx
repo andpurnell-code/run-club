@@ -12,51 +12,53 @@ export default function NavBar({ memberName, onLogout }: Props) {
 
   return (
     <nav style={{
-      height: 100,
       background: '#ffffff',
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'space-between',
-      padding: '0 40px',
+      padding: '12px 40px 16px',
       position: 'sticky',
       top: 0,
       zIndex: 100,
     }}>
-      {/* Logo */}
-      <Link to="/" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center' }}>
-        <img src={puffinLogo} alt="Run Club" style={{ width: 124, height: 124, objectFit: 'contain' }} />
-      </Link>
+      {/* Spacer to balance right side */}
+      <div style={{ width: 120 }} />
 
-      {/* Tabs */}
-      <div style={{
-        display: 'flex',
-        background: t.bg,
-        borderRadius: 12,
-        padding: 4,
-        gap: 2,
-      }}>
-        {[{ label: 'Dashboard', to: '/' }, { label: 'Club', to: '/club' }].map(({ label, to }) => {
-          const active = location.pathname === to
-          return (
-            <Link key={to} to={to} style={{
-              textDecoration: 'none',
-              padding: '6px 18px',
-              borderRadius: 9,
-              fontWeight: 700,
-              fontSize: 14,
-              color: active ? t.text : t.textSecondary,
-              background: active ? t.surface : 'transparent',
-              boxShadow: active ? t.shadow : 'none',
-              transition: 'all 180ms',
-            }}>
-              {label}
-            </Link>
-          )
-        })}
+      {/* Center: logo + tabs stacked */}
+      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 8 }}>
+        <Link to="/" style={{ textDecoration: 'none' }}>
+          <img src={puffinLogo} alt="Run Club" style={{ width: 124, height: 124, objectFit: 'contain', display: 'block' }} />
+        </Link>
+        <div style={{
+          display: 'flex',
+          background: t.bg,
+          borderRadius: 12,
+          padding: 4,
+          gap: 2,
+        }}>
+          {[{ label: 'Dashboard', to: '/' }, { label: 'Club', to: '/club' }].map(({ label, to }) => {
+            const active = location.pathname === to
+            return (
+              <Link key={to} to={to} style={{
+                textDecoration: 'none',
+                padding: '6px 18px',
+                borderRadius: 9,
+                fontWeight: 700,
+                fontSize: 14,
+                color: active ? t.text : t.textSecondary,
+                background: active ? t.surface : 'transparent',
+                boxShadow: active ? t.shadow : 'none',
+                transition: 'all 180ms',
+              }}>
+                {label}
+              </Link>
+            )
+          })}
+        </div>
       </div>
 
       {/* Avatar + logout */}
-      <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+      <div style={{ display: 'flex', alignItems: 'center', gap: 10, width: 120, justifyContent: 'flex-end' }}>
         <div style={{
           width: 34, height: 34, borderRadius: '50%',
           background: t.accentLight,
