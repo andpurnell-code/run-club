@@ -82,10 +82,10 @@ export default function ActivityCalendar({ member, onDayClick }: Props) {
           const isToday = dateStr === todayStr
           const hasRun = dist !== undefined
 
-          let bg = t.bg
-          let color = t.textSecondary
-          let border = 'none'
-          let textColor = t.textSecondary
+          let bg: string = t.bg
+          let color: string = t.textSecondary
+          let border: string = 'none'
+          let textColor: string = t.textSecondary
 
           if (hasRun) {
             bg = t.cardDark

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import type { Member, ProgressStatus } from '../../types'
-import { monthlyTarget, monthlyTotal, progressStatus, expectedByNow, daysInMonth } from '../../lib/calculations'
+import { monthlyTarget, monthlyTotal, progressStatus, daysInMonth } from '../../lib/calculations'
 import { t } from '../../tokens'
 
 interface Props {
@@ -82,7 +82,6 @@ export default function MonthlyChallenge({ member, onLogRun }: Props) {
 
   const target = monthlyTarget(member)
   const total = monthlyTotal(member, year, month)
-  const expected = expectedByNow(member, year, month)
   const status = progressStatus(member, year, month)
   const pct = target > 0 ? (total / target) * 100 : 0
   const days = daysInMonth(year, month)
