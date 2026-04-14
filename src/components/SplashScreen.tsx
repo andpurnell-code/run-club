@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react'
 import puffinRun from '../assets/puffin-run.webm'
-import { t } from '../tokens'
 
 interface Props {
   onDone: () => void
