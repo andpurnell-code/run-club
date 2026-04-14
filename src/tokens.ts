@@ -1,7 +1,7 @@
 export const t = {
   bg: '#F0EEF8',
-  surface: '#FFFFFF',
-  surfaceRaised: '#FFFFFF',
+  surface: '#F8F7FF',
+  surfaceRaised: '#F8F7FF',
 
   text: '#1A1035',
   textSecondary: '#6B7280',

@@ -14,7 +14,6 @@ export default function NavBar({ memberName, onLogout }: Props) {
     <nav style={{
       height: 88,
       background: t.surface,
-      borderBottom: `1px solid ${t.border}`,
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'space-between',
