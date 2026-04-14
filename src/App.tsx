@@ -4,6 +4,7 @@ import NavBar from './components/NavBar'
 import Dashboard from './pages/Dashboard'
 import ClubPage from './pages/Club'
 import LogRunModal from './components/LogRunModal'
+import SplashScreen from './components/SplashScreen'
 import { useRunClub } from './hooks/useRunClub'
 import { t } from './tokens'
 import './index.css'
@@ -11,6 +12,7 @@ import './index.css'
 export default function App() {
   const { club, currentMember, logout, logRun } = useRunClub()
   const [modalDate, setModalDate] = useState<string | null>(null)
+  const [showSplash, setShowSplash] = useState(true)
 
   // Temporary: auto-login as first member (login screen comes next)
   const member = currentMember ?? club.members[0]
@@ -25,6 +27,7 @@ export default function App() {
 
   return (
     <div style={{ minHeight: '100vh', background: t.bg }}>
+      {showSplash && <SplashScreen onDone={() => setShowSplash(false)} />}
       <NavBar memberName={member.name} onLogout={logout} />
       <Routes>
         <Route path="/" element={<Dashboard member={member} onLogRun={openModal} />} />
