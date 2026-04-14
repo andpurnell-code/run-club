@@ -26,7 +26,7 @@ export default function App() {
   }
 
   return (
-    <div style={{ minHeight: '100vh', background: t.bg }}>
+    <div style={{ minHeight: '100vh', background: '#ffffff' }}>
       {showSplash && <SplashScreen onDone={() => setShowSplash(false)} />}
       <NavBar memberName={member.name} onLogout={logout} />
       <Routes>
