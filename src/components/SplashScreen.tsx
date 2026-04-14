@@ -21,7 +21,7 @@ export default function SplashScreen({ onDone }: Props) {
   return (
     <div style={{
       position: 'fixed', inset: 0,
-      background: '#ffffff',
+      backgroundColor: '#ffffff',
       display: 'flex', alignItems: 'center', justifyContent: 'center',
       zIndex: 9999,
       opacity: fading ? 0 : 1,
