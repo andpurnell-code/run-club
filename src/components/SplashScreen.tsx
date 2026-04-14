@@ -7,7 +7,7 @@ interface Props {
 
 export default function SplashScreen({ onDone }: Props) {
   useEffect(() => {
-    const timer = setTimeout(() => onDone(), 2500)
+    const timer = setTimeout(() => onDone(), 1700)
     return () => clearTimeout(timer)
   }, [onDone])
 
