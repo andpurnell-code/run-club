@@ -12,7 +12,7 @@ export default function Dashboard({ member, onLogRun }: Props) {
   return (
     <div style={{
       display: 'grid',
-      gridTemplateColumns: '320px 1fr',
+      gridTemplateColumns: '320px 420px',
       gap: 20,
       padding: '28px 40px',
       maxWidth: 1200,
