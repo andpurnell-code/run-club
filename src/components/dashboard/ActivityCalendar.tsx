@@ -134,8 +134,8 @@ export default function ActivityCalendar({ member, onDayClick }: Props) {
 
 const navBtnStyle: React.CSSProperties = {
   width: 28, height: 28, borderRadius: 8,
-  background: '#F2F2F7', border: 'none',
+  background: t.bg, border: 'none',
   fontFamily: 'Nunito, sans-serif', fontWeight: 700, fontSize: 13,
-  cursor: 'pointer', color: '#6B7280',
+  cursor: 'pointer', color: t.textSecondary,
   display: 'flex', alignItems: 'center', justifyContent: 'center',
 }

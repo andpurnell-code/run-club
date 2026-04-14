@@ -37,9 +37,9 @@ export default function App() {
         style={{
           position: 'fixed', bottom: 32, right: 32,
           width: 58, height: 58, borderRadius: '50%',
-          background: t.text, border: 'none',
+          background: t.accentGradient, border: 'none',
           color: '#fff', fontSize: 28, cursor: 'pointer',
-          boxShadow: '0 4px 16px rgba(0,0,0,0.2)',
+          boxShadow: '0 4px 16px rgba(124,106,247,0.35)',
           display: 'flex', alignItems: 'center', justifyContent: 'center',
           transition: 'transform 180ms, box-shadow 180ms',
           zIndex: 100,
@@ -47,12 +47,12 @@ export default function App() {
         onMouseEnter={e => {
           const el = e.currentTarget as HTMLElement
           el.style.transform = 'scale(1.1) translateY(-2px)'
-          el.style.boxShadow = '0 8px 24px rgba(0,0,0,0.3)'
+          el.style.boxShadow = '0 8px 28px rgba(124,106,247,0.5)'
         }}
         onMouseLeave={e => {
           const el = e.currentTarget as HTMLElement
           el.style.transform = 'scale(1)'
-          el.style.boxShadow = '0 4px 16px rgba(26,16,64,0.25)'
+          el.style.boxShadow = '0 4px 16px rgba(124,106,247,0.35)'
         }}
       >
         +

@@ -141,7 +141,7 @@ export default function MonthlyChallenge({ member, onLogRun }: Props) {
           </div>
 
           <button onClick={onLogRun} style={{
-            background: t.text,
+            background: t.accentGradient,
             color: '#fff',
             border: 'none', borderRadius: t.radius.btn, padding: '10px 0',
             fontFamily: 'Nunito, sans-serif', fontWeight: 700, fontSize: 14,

@@ -1,33 +1,34 @@
 export const t = {
-  bg: '#F2F2F7',
+  bg: '#F0EEF8',
   surface: '#FFFFFF',
   surfaceRaised: '#FFFFFF',
 
-  text: '#111111',
+  text: '#1A1035',
   textSecondary: '#6B7280',
   textTertiary: '#AEAEB2',
 
-  accent: '#0D9488',
-  accentMid: '#2DD4BF',
-  accentLight: '#CCFBF1',
+  accent: '#7C6AF7',
+  accentMid: '#A78BFA',
+  accentLight: '#EDE9FE',
+  accentGradient: 'linear-gradient(135deg, #7C6AF7 0%, #C084FC 100%)',
 
-  cardDark: '#1C1C1E',
+  cardDark: '#5B21B6',
 
-  border: 'rgba(0,0,0,0.08)',
-  shadow: '0 2px 12px rgba(0,0,0,0.07)',
-  shadowMd: '0 4px 20px rgba(0,0,0,0.10)',
+  border: 'rgba(124,106,247,0.12)',
+  shadow: '0 2px 16px rgba(124,106,247,0.08)',
+  shadowMd: '0 4px 24px rgba(124,106,247,0.16)',
 
   // status
-  aheadBg: '#CCFBF1',
-  aheadText: '#0D7A6A',
+  aheadBg: '#EDE9FE',
+  aheadText: '#5B21B6',
   behindBg: '#FFE4E4',
   behindText: '#C02020',
-  onTrackBg: '#F2F2F7',
-  onTrackText: '#6B7280',
+  onTrackBg: '#F0EEF8',
+  onTrackText: '#7C6AF7',
 
   radius: {
-    card: 20,
-    cardSm: 16,
+    card: 24,
+    cardSm: 18,
     btn: 100,
     day: 10,
   },

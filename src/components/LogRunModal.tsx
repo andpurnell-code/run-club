@@ -58,7 +58,10 @@ export default function LogRunModal({ member, initialDate, onSave, onClose }: Pr
       <div style={{
         background: t.surface,
         borderRadius: 24,
-        borderTop: `4px solid ${t.accent}`,
+        borderTop: `4px solid transparent`,
+        backgroundImage: `linear-gradient(${t.surface}, ${t.surface}), ${t.accentGradient}`,
+        backgroundOrigin: 'border-box',
+        backgroundClip: 'padding-box, border-box',
         padding: '28px 28px 24px',
         width: '100%', maxWidth: 360,
         boxShadow: '0 20px 60px rgba(0,0,0,0.15)',
@@ -94,7 +97,7 @@ export default function LogRunModal({ member, initialDate, onSave, onClose }: Pr
           disabled={!canSave}
           style={{
             width: '100%', padding: '13px 0', borderRadius: t.radius.btn,
-            background: canSave ? t.text : t.bg,
+            background: canSave ? t.accentGradient : t.bg,
             color: canSave ? '#fff' : t.textTertiary,
             border: 'none', fontFamily: 'Nunito, sans-serif',
             fontWeight: 700, fontSize: 15,
