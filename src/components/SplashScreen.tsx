@@ -7,7 +7,7 @@ interface Props {
 
 export default function SplashScreen({ onDone }: Props) {
   useEffect(() => {
-    const timer = setTimeout(() => onDone(), 6000)
+    const timer = setTimeout(() => onDone(), 2500)
     return () => clearTimeout(timer)
   }, [onDone])
 
@@ -18,14 +18,25 @@ export default function SplashScreen({ onDone }: Props) {
       display: 'flex', alignItems: 'center', justifyContent: 'center',
       zIndex: 9999,
     }}>
-      <video
-        src={puffinRun}
-        autoPlay
-        loop
-        muted
-        playsInline
-        style={{ width: 280, height: 280, objectFit: 'contain' }}
-      />
+      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 12 }}>
+        <video
+          src={puffinRun}
+          autoPlay
+          loop
+          muted
+          playsInline
+          style={{ width: 280, height: 280, objectFit: 'contain' }}
+        />
+        <span style={{
+          fontFamily: 'Nunito, sans-serif',
+          fontWeight: 700,
+          fontSize: 16,
+          color: '#AEAEB2',
+          letterSpacing: 0.2,
+        }}>
+          Loading your Run Club...
+        </span>
+      </div>
     </div>
   )
 }
