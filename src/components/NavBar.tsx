@@ -1,5 +1,6 @@
 import { Link, useLocation } from 'react-router-dom'
 import { t } from '../tokens'
+import puffinLogo from '../assets/puffin.png'
 
 interface Props {
   memberName?: string
@@ -23,17 +24,20 @@ export default function NavBar({ memberName, onLogout }: Props) {
       zIndex: 100,
     }}>
       {/* Logo */}
-      <Link to="/" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: 8 }}>
-        <svg width="28" height="28" viewBox="0 0 32 32" fill="none">
-          <circle cx="20" cy="5" r="3" fill={t.text} />
-          <path d="M14 10 L18 8 L22 13 L26 11" stroke={t.text} strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
-          <path d="M18 8 L16 16 L12 20" stroke={t.text} strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
-          <path d="M16 16 L20 21 L18 27" stroke={t.text} strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
-        </svg>
-        <span style={{ fontWeight: 800, fontSize: 17, letterSpacing: -0.3 }}>
-          <span style={{ color: t.text }}>Run</span>
-          <span style={{ color: t.accent }}>Club</span>
-        </span>
+      <Link to="/" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center' }}>
+        <div style={{ width: 52, height: 52, overflow: 'hidden', flexShrink: 0 }}>
+          <img
+            src={puffinLogo}
+            alt="Run Club"
+            style={{
+              width: '140%',
+              height: '140%',
+              objectFit: 'cover',
+              marginLeft: '-18%',
+              marginTop: '-10%',
+            }}
+          />
+        </div>
       </Link>
 
       {/* Tabs */}
