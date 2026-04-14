@@ -191,7 +191,7 @@ export default function ClubPage({ club, currentMember }: Props) {
       gridTemplateColumns: '320px 1fr',
       gap: 20,
       padding: '28px 40px',
-      maxWidth: 1200,
+      maxWidth: 860,
       margin: '0 auto',
       boxSizing: 'border-box',
     }}>

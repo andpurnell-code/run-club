@@ -13,7 +13,7 @@ import './index.css'
 function PageToggle() {
   const location = useLocation()
   return (
-    <div style={{ padding: '16px 40px 0', maxWidth: 1200, margin: '0 auto', boxSizing: 'border-box' }}>
+    <div style={{ padding: '16px 40px 0', maxWidth: 860, margin: '0 auto', boxSizing: 'border-box' }}>
       <div style={{ display: 'inline-flex', background: t.bg, borderRadius: 12, padding: 4, gap: 2 }}>
         {[{ label: 'Dashboard', to: '/' }, { label: 'Club', to: '/club' }].map(({ label, to }) => {
           const active = location.pathname === to
