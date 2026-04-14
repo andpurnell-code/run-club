@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&display=swap');
+@import "tailwindcss";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+  background-color: #F2F2F7;
+  color: #111111;
+  -webkit-font-smoothing: antialiased;
+}
+
+input[type='date'], input[type='number'] {
+  font-family: 'Nunito', sans-serif;
+}
