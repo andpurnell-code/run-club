@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import puffinRun from '../assets/puffin-run.webm'
 
 interface Props {
@@ -6,15 +6,9 @@ interface Props {
 }
 
 export default function SplashScreen({ onDone }: Props) {
-  const [fading, setFading] = useState(false)
-
   useEffect(() => {
-    const fadeTimer = setTimeout(() => setFading(true), 5500)
-    const doneTimer = setTimeout(() => onDone(), 6500)
-    return () => {
-      clearTimeout(fadeTimer)
-      clearTimeout(doneTimer)
-    }
+    const timer = setTimeout(() => onDone(), 6000)
+    return () => clearTimeout(timer)
   }, [onDone])
 
   return (
@@ -23,8 +17,6 @@ export default function SplashScreen({ onDone }: Props) {
       backgroundColor: '#ffffff',
       display: 'flex', alignItems: 'center', justifyContent: 'center',
       zIndex: 9999,
-      opacity: fading ? 0 : 1,
-      transition: 'opacity 800ms ease-in-out',
     }}>
       <video
         src={puffinRun}
