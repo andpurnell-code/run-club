@@ -12,7 +12,7 @@ export default function NavBar({ memberName, onLogout }: Props) {
 
   return (
     <nav style={{
-      height: 64,
+      height: 88,
       background: t.surface,
       borderBottom: `1px solid ${t.border}`,
       display: 'flex',
@@ -25,7 +25,7 @@ export default function NavBar({ memberName, onLogout }: Props) {
     }}>
       {/* Logo */}
       <Link to="/" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center' }}>
-        <div style={{ width: 52, height: 52, overflow: 'hidden', flexShrink: 0 }}>
+        <div style={{ width: 104, height: 104, overflow: 'hidden', flexShrink: 0 }}>
           <img
             src={puffinLogo}
             alt="Run Club"
