@@ -5,48 +5,50 @@ import { loadClub, saveClub, getCurrentMemberId, setCurrentMemberId, clearCurren
 export function useRunClub() {
   const [club, setClub] = useState<Club>(() => loadClub())
   const [currentMemberId, setCurrentMemberIdState] = useState<string | null>(() => getCurrentMemberId())
-
   const currentMember = club.members.find(m => m.id === currentMemberId) ?? null
 
-  const login = useCallback((name: string, yearlyGoal: number) => {
+  const login = useCallback((name: string, target = 30) => {
     const existing = club.members.find(m => m.name.toLowerCase() === name.toLowerCase())
     if (existing) {
       setCurrentMemberId(existing.id)
       setCurrentMemberIdState(existing.id)
       return
     }
+    if (club.members.length >= 8) throw new Error('This Few is full.')
     const newMember: Member = {
-      id: Math.random().toString(36).slice(2, 9),
-      name,
-      yearlyGoal,
-      runs: [],
-      createdAt: new Date().toISOString(),
+      id: Math.random().toString(36).slice(2, 9), name, target,
+      role: 'member', createdAt: new Date().toISOString(),
     }
     const updated = { ...club, members: [...club.members, newMember] }
-    saveClub(updated)
-    setClub(updated)
-    setCurrentMemberId(newMember.id)
-    setCurrentMemberIdState(newMember.id)
+    saveClub(updated); setClub(updated); setCurrentMemberId(newMember.id); setCurrentMemberIdState(newMember.id)
   }, [club])
 
-  const logout = useCallback(() => {
-    clearCurrentMember()
-    setCurrentMemberIdState(null)
-  }, [])
+  const logout = useCallback(() => { clearCurrentMember(); setCurrentMemberIdState(null) }, [])
 
   const logRun = useCallback((memberId: string, entry: RunEntry) => {
+    const nextActivity = {
+      id: Math.random().toString(36).slice(2, 9), memberId, date: entry.date,
+      distance: entry.distance, note: entry.note, reactions: [],
+    }
     const updated = {
       ...club,
-      members: club.members.map(m => {
-        if (m.id !== memberId) return m
-        const filtered = m.runs.filter(r => r.date !== entry.date)
-        const runs = entry.distance > 0 ? [...filtered, entry] : filtered
-        return { ...m, runs }
-      }),
+      currentGoal: { ...club.currentGoal, activities: [...club.currentGoal.activities, nextActivity] },
     }
-    saveClub(updated)
-    setClub(updated)
+    saveClub(updated); setClub(updated)
   }, [club])
 
-  return { club, currentMember, login, logout, logRun }
+  const react = useCallback((activityId: string, memberId: string) => {
+    const updated = {
+      ...club,
+      currentGoal: {
+        ...club.currentGoal,
+        activities: club.currentGoal.activities.map(a => a.id === activityId
+          ? { ...a, reactions: [...a.reactions.filter(r => r.memberId !== memberId), { memberId, type: 'nice-one' as const }] }
+          : a),
+      },
+    }
+    saveClub(updated); setClub(updated)
+  }, [club])
+
+  return { club, currentMember, login, logout, logRun, react }
 }
